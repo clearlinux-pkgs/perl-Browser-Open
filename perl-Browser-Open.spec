@@ -4,10 +4,10 @@
 #
 Name     : perl-Browser-Open
 Version  : 0.04
-Release  : 8
+Release  : 9
 URL      : https://cpan.metacpan.org/authors/id/C/CF/CFRANKS/Browser-Open-0.04.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/C/CF/CFRANKS/Browser-Open-0.04.tar.gz
-Summary  : open a browser in a given URL
+Summary  : XS implementation of parts of Class::Load
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
 BuildRequires : buildreq-cpan
@@ -21,6 +21,7 @@ open a browser in a given URL
 Summary: dev components for the perl-Browser-Open package.
 Group: Development
 Provides: perl-Browser-Open-devel = %{version}-%{release}
+Requires: perl-Browser-Open = %{version}-%{release}
 
 %description dev
 dev components for the perl-Browser-Open package.
