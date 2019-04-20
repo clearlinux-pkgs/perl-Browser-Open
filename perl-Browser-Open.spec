@@ -4,7 +4,7 @@
 #
 Name     : perl-Browser-Open
 Version  : 0.04
-Release  : 10
+Release  : 11
 URL      : https://cpan.metacpan.org/authors/id/C/CF/CFRANKS/Browser-Open-0.04.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/C/CF/CFRANKS/Browser-Open-0.04.tar.gz
 Summary  : XS implementation of parts of Class::Load
