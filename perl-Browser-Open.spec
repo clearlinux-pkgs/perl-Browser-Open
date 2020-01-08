@@ -4,12 +4,13 @@
 #
 Name     : perl-Browser-Open
 Version  : 0.04
-Release  : 11
+Release  : 12
 URL      : https://cpan.metacpan.org/authors/id/C/CF/CFRANKS/Browser-Open-0.04.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/C/CF/CFRANKS/Browser-Open-0.04.tar.gz
-Summary  : XS implementation of parts of Class::Load
+Summary  : open a browser in a given URL
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
+Requires: perl-Browser-Open-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -27,14 +28,24 @@ Requires: perl-Browser-Open = %{version}-%{release}
 dev components for the perl-Browser-Open package.
 
 
+%package perl
+Summary: perl components for the perl-Browser-Open package.
+Group: Default
+Requires: perl-Browser-Open = %{version}-%{release}
+
+%description perl
+perl components for the perl-Browser-Open package.
+
+
 %prep
 %setup -q -n Browser-Open-0.04
+cd %{_builddir}/Browser-Open-0.04
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -44,7 +55,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -64,8 +75,11 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Browser/Open.pm
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Browser::Open.3
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/Browser/Open.pm
