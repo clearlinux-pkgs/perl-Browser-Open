@@ -4,7 +4,7 @@
 #
 Name     : perl-Browser-Open
 Version  : 0.04
-Release  : 22
+Release  : 23
 URL      : https://cpan.metacpan.org/authors/id/C/CF/CFRANKS/Browser-Open-0.04.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/C/CF/CFRANKS/Browser-Open-0.04.tar.gz
 Summary  : open a browser in a given URL
